@@ -1,0 +1,37 @@
+% Idioma y codificación
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Matemáticas
+\usepackage{amsmath, amssymb, amsthm}
+
+% Tipografía
+\usepackage{lmodern}
+
+% Márgenes
+\usepackage{geometry}
+\geometry{margin=3cm}
+
+% Hipervínculos
+\usepackage{hyperref}
+
+% Entornos matemáticos
+\theoremstyle{definition}
+\newtheorem{definicion}{Definición}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{teorema}[definicion]{Teorema}
+\newtheorem{proposicion}[definicion]{Proposición}
+\newtheorem{lema}[definicion]{Lema}
+
+\theoremstyle{remark}
+\newtheorem{observacion}[definicion]{Observación}
+\newtheorem{ejemplo}[definicion]{Ejemplo}
+
+% Notación frecuente
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+
