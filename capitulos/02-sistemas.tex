@@ -9,11 +9,30 @@
 
 \section{Matrices}
 \section{Forma escalonada reducida de una matriz}
-\section{Subespacios fundamentales de una matriz}
+\section{Subespacios asociados a una matriz}
 \section{Rango de una matriz}
 	\begin{definicion}
-		Sea $A$ una matriz. Decimos que el rango de filas de $A$ es $\dim\ A$
+		El rango de filas de una matriz $A$ es la dimensión del subespacio que generan sus filas, y el rango de columnas de una matriz $A$
 	\end{definicion}
+	Nota que el rango de filas de una matriz coincide con el número de filas no nulas de su forma escalonada reducida.
+	\begin{teorema}
+		El rango de filas de una matriz coincide con su rango de columnas.
+	\end{teorema}
+	\begin{proof}
+		Sea $A$ una matriz cualquiera, y sea $R$ su forma escalonada reducida, tenemos que ver que $\dim(\Fil A)=\dim(\Col A)$. Como las operaciones elementales de filas no cambian el subespacio que generan estas, tenemos que $\Fil A=\Fil R$, llamemos $r=\dim(\Fil A)$, como $\dim(\Fil A)=\dim(\Fil R)=r$ tenemos que $R$ tiene $r$ filas no nulas, luego tiene $r$ 1-pivotes. Las columnas de $A$ que tiene 1-pivotes en su forma escalonada reducida son linealmente independientes, pues los sistemas $Ax=\bar0$ y $Rx=\bar0$ tienen las mismas soluciones, luego como las columnas de $R$ que no tienen pivote se pueden despejar como combinación lineal de las que tienen pivote tenemos que las columnas correspondientes a estas en $A$ se pueden despejar en las correspondientes a las columnas que tiene pivote, así pues, $\dim(\Col A)=\dim(\Col R)$. Finalmente, tenemos que
+		\begin{center}
+			$\dim(\Fil A)=\dim(\Fil R)=r=\dim(\Col R)=\dim(\Col A)$.
+		\end{center}
+	\end{proof}
+	\begin{definicion}
+		El rango de una matriz $A$ es la dimensión del subespacio que generan sus columnas, y se denota como $\rango(A)$.
+	\end{definicion}
+	\begin{proposicion}
+		Sea $A$ una matriz, $\rango(A^t)=\rango(A)$.
+	\end{proposicion}
+	\begin{proof}
+		Se tiene que $\rango(A^t)=\dim(\Col A^t)=\dim(\Fil A)=\rango(A)$.
+	\end{proof}
 \section{Operaciones con matrices}
 \section{Matrices elementales}
 \section{Matriz inversa}

@@ -1,8 +1,49 @@
 % 01-kn.tex
 \chapter{Vectores de $K^n$}
 
-\section{Definición}
+\section{$K^n$ y sus operaciones}
 
-\begin{definicion}
-	...
-\end{definicion}
+	\begin{definicion}
+		Sea $K$ un cuerpo, $t\in K$ y $n\in\N$, se definen
+		\begin{center}
+			$K^n=\{(x_1,...,x_n)|x_i\in K,1\leq i\leq n\}$,\\
+			$(x_1,...,x_n)+(y_1,...,y_n)=(x_1+y_1,...,x_n+y_n)$,\\
+			$t(x_1,...,x_n)=(tx_1,...,tx_n)$.
+		\end{center}
+	\end{definicion}
+	A los elementos de $K$ los llamaremos escalares y a los de $K^n$ vectores $n$-tuplas.\\
+	Normalmente escribiremos los elementos de $K^n$ en vertical, hecho que justificaremos más adelante.
+	\begin{notacion}
+		$\bar0=(0,...,0)$.
+	\end{notacion}
+	Entenderemos que si estamos trabajando con $n$-tuplas $\bar0$ es también una $n$-tupla. La siguiente proposición muestra las  propiedades más elementales de los elementos de $K^n$.
+	\begin{proposicion}
+		Sean $u,v,w\in K^n$ y $t,s\in K$. Entonces:
+		\begin{itemize}
+			\item $u+v=v+u$.
+			\item $(u+v)+w=u+(v+w)$.
+			\item $u+\bar0=u$.
+			\item $u+(-u)=\bar0$.
+			\item $t(u+v)=tu+tv$.
+			\item $(t+s)u=tu+ts$.
+			\item $(ts)u=t(su)$.
+			\item $1u=u$.
+		\end{itemize}
+	\end{proposicion}
+	 Nótese que $(K^n,+)$ es un grupo abeliano con elemento neutro $\bar0=(0,...,0)$. La siguiente proposición muestra algunas propiedades más, ya no tan triviales, de los elementos de $K^n$.
+	 \begin{proposicion}
+	 	Sean $u,v,w,v_1,...,v_m\in K^n$ y $t,t_1,...,t_m\in K^n$. Entonces:
+	 	\begin{itemize}
+	 		\item $0u=\bar0$.
+	 		\item Si $u+v=u+w$, entonces $v=w$.
+	 		\item $t\bar0=\bar0$.
+	 		\item Si $tu=\bar0$, entonces $t=0$ ó $u=\bar0$.
+	 		\item $(-t)u=-(tu)=-tu$, en particular, $(-1)u=-u$.
+	 		\item En la expresión $t_1v_1+\cdots+t_mv_m$ no importa el orden en el que sumemos.
+	 		
+	 	\end{itemize}
+	 \end{proposicion}
+\section{Subespacios de $K^n$}
+\section{Combinaciones lineales y familias generadoras}
+\section{Independencia lineal en $K^n$}
+\section{Bases y dimensión de subespacios de $K^n$}

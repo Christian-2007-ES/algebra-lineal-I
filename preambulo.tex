@@ -19,6 +19,7 @@
 % Entornos matemáticos
 \theoremstyle{definition}
 \newtheorem{definicion}{Definición}[chapter]
+\newtheorem{notacion}[definicion]{Notación}
 
 \theoremstyle{plain}
 \newtheorem{teorema}[definicion]{Teorema}
@@ -34,4 +35,13 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\N}{\mathbb{N}}
+\renewcommand{\labelitemi}{$\bullet$}
+
+% Nuevos operadores
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\gen}{gen}
+\DeclareMathOperator{\Col}{Col}
+\DeclareMathOperator{\Fil}{Fil}
+\DeclareMathOperator{\Nul}{Nul}
+\DeclareMathOperator{\rango}{rango}
 
