@@ -4,46 +4,184 @@
 \section{$K^n$ y sus operaciones}
 
 	\begin{definicion}
-		Sea $K$ un cuerpo, $t\in K$ y $n\in\N$, se definen
+		Sea $K$ un cuerpo y $n\in\N$. $K^n$ es el conjunto de todas las $n$-tuplas de longitud $n$ de elementos de $K$:
 		\begin{center}
-			$K^n=\{(x_1,...,x_n)|x_i\in K,1\leq i\leq n\}$,\\
-			$(x_1,...,x_n)+(y_1,...,y_n)=(x_1+y_1,...,x_n+y_n)$,\\
+			$K^n=\{(x_1,...,x_n):x_i\in K,1\leq i\leq n\}$.
+		\end{center}
+		Para $(x_1,...,x_n)\in K^n$ y $i\in\{1,...,n\}$, decimos que $x_i$ es la $i$-ésima entrada de $(x_1,...,x_n)$.
+	\end{definicion}
+	A los elementos de $K$ los llamaremos escalares y a los de $K^n$ vectores $n$-tuplas. Normalmente escribiremos los elementos de $K^n$ en vertical, hecho del que veremos el porque más adelante.
+	\begin{definicion}
+		La suma de $(x_1,...,x_n),(y_1,...,y_n)\in K^n$ se define por
+		\begin{center}
+			$(x_1,...,x_n)+(y_1,...,y_n)=(x_1+y_1,...,x_n+y_n)$.
+		\end{center}
+	\end{definicion}
+	\begin{definicion}
+		El producto $(x_1,...,x_n)\in K^n$ y un escalar $t\in K$ se define por
+		\begin{center}
 			$t(x_1,...,x_n)=(tx_1,...,tx_n)$.
 		\end{center}
 	\end{definicion}
-	A los elementos de $K$ los llamaremos escalares y a los de $K^n$ vectores $n$-tuplas.\\
-	Normalmente escribiremos los elementos de $K^n$ en vertical, hecho que justificaremos más adelante.
 	\begin{notacion}
-		$\bar0=(0,...,0)$.
+		Cuando estamos trabajando con $n$-tuplas $0$ denota a la $n$-tupla $(0,...,0)$.
 	\end{notacion}
-	Entenderemos que si estamos trabajando con $n$-tuplas $\bar0$ es también una $n$-tupla. La siguiente proposición muestra las  propiedades más elementales de los elementos de $K^n$.
+	\begin{notacion}
+		Para simplificar $x\in K^n$ denotara a la $n$-tupla $(x_1,...,x_n)$.
+	\end{notacion}
+	La siguiente proposición muestra las  propiedades más elementales de los elementos de $K^n$.
 	\begin{proposicion}
 		Sean $u,v,w\in K^n$ y $t,s\in K$. Entonces:
-		\begin{itemize}
+		\begin{enumerate}
 			\item $u+v=v+u$.
 			\item $(u+v)+w=u+(v+w)$.
-			\item $u+\bar0=u$.
+			\item $u+0=u$.
 			\item $u+(-u)=\bar0$.
 			\item $t(u+v)=tu+tv$.
 			\item $(t+s)u=tu+ts$.
 			\item $(ts)u=t(su)$.
 			\item $1u=u$.
-		\end{itemize}
+		\end{enumerate}
 	\end{proposicion}
 	 Nótese que $(K^n,+)$ es un grupo abeliano con elemento neutro $\bar0=(0,...,0)$. La siguiente proposición muestra algunas propiedades más, ya no tan triviales, de los elementos de $K^n$.
 	 \begin{proposicion}
 	 	Sean $u,v,w,v_1,...,v_m\in K^n$ y $t,t_1,...,t_m\in K^n$. Entonces:
-	 	\begin{itemize}
-	 		\item $0u=\bar0$.
+	 	\begin{enumerate}
+	 		\item $0u=0$.
 	 		\item Si $u+v=u+w$, entonces $v=w$.
-	 		\item $t\bar0=\bar0$.
-	 		\item Si $tu=\bar0$, entonces $t=0$ ó $u=\bar0$.
+	 		\item $t0=0$.
+	 		\item Si $tu=0$, entonces $t=0$ ó $u=0$.
 	 		\item $(-t)u=-(tu)=-tu$, en particular, $(-1)u=-u$.
 	 		\item En la expresión $t_1v_1+\cdots+t_mv_m$ no importa el orden en el que sumemos.
 	 		
-	 	\end{itemize}
+	 	\end{enumerate}
 	 \end{proposicion}
 \section{Subespacios de $K^n$}
+	\begin{definicion}
+		Sea $S\subseteq K^n$. Decimos que $S$ es un subespacio de $K^n$ si verifica que:
+		\begin{enumerate}
+			\item $S$ es no vacío.
+			\item Para todos $u,v\in S$ se tiene que $u+v\in S$.
+			\item Para todo $t\in K$ y $v\in S$ se tiene que $tv\in S$.
+		\end{enumerate}
+	\end{definicion}
+	En tal caso escribimos $S\leq K^n$.
+	\begin{observacion}
+		La condición de que $S$ sea no vacío es equivalente a que $0\in S$.
+	\end{observacion}
+	\begin{observacion}
+		Es inmediato que $\{0\}\leq K^n$ y $K^n\leq K^n$.
+	\end{observacion}
+	\begin{proposicion} Si para cada $i\in I$ consideremos un $S_i\leq K^n$, entonces $\displaystyle\bigcap_{i\in I}S_i\leq K^n$.
+	\end{proposicion}
+	\begin{definicion}
+		Sean $S_1,...,S_m\leq K^n$, definimos la suma de $S_1,...,S_m$ como
+		\begin{center}
+			$S_1+\cdots+S_m=\{s_1+\cdots+s_m|s_i\in S_i,1\leq i\leq m\}$.
+		\end{center}
+	\end{definicion}
+	\begin{proposicion}
+		Si $S_1,...,S_m\leq K^n$, entonces $S_1+\cdots+S_m\leq K^n$.
+	\end{proposicion}
 \section{Combinaciones lineales y familias generadoras}
+	\begin{definicion}
+		Un vector $v\in K^n$ es combinación lineal de $v_1,...,v_m\in K^n$ si existen $t_1,...,t_m\in K$ tales que $v=t_1v_1+\cdots+t_mv_m$. Los escalares $t_1,...,t_m$ se llaman coeficientes de la combinación lineal.
+	\end{definicion}
+	\begin{definicion}
+		Una familia de vectores de longitud $m$ en $K^n$ es una $m$-tupla $(v_1,...,v_m)$ donde $v_1,...,v_m\in K^n$.
+	\end{definicion}
+	\begin{notacion}
+		Escribiremos $v_1,...,v_m$ en lugar de $(v_1,...,v_m)$.
+	\end{notacion}
+	\begin{definicion}
+		Sean $v_1,...,v_m\in K^n$, entonces el conjunto 
+		\begin{center}
+			$\gen(v_1,...,v_m)=\{t_1v_1+\cdots+t_mv_m|t_1,...,t_m\in K\}$
+		\end{center}
+		se llama generador de $v_1,...,v_m$. Si $S=\gen(v_1,...,v_m)$ se dice que la familia $v_1,...,v_m$ genera $S$, o que $v_1,...,v_m$ es una familia generadora de $S$.
+	\end{definicion}
+	\begin{proposicion}
+		Si $v_1,...,v_m\in K^n$, entonces $\gen(v_1,...,v_m)\leq K^n$. Además, $\gen(v_1,...,v_m)$ es el subespacio más pequeño que contiene a $v_1,...,v_m$, es decir, si $S\leq K^n$ y $v_1,...,v_m\in S$, entonces $\gen(v_1,...,v_m)\subseteq S$.
+	\end{proposicion}
+	\begin{lema}
+		Sean $v_1,...,v_m\in K^n$ y $u_1,...,u_k\in K^n$. Si $v_1,...,v_m\in\gen(u_1,...,u_k)$, entonces $\gen(v_1,...,v_m)\subseteq\gen(u_1,...,u_k)$. En particular, $\gen(v_1,...,v_m)=\gen(u_1,...,u_k)$ si y solo si $v_1,...,v_m\in\gen(u_1,...,u_k)$ y $u_1,...,u_k\in\gen(v_1,...,v_m)$.
+	\end{lema}
+	\begin{teorema}
+		$K^n=\gen(e_1,...,e_n)$ donde $e_i\in K^n$ es la $n$-tupla que tiene $0$ en todas sus entradas, salvo en la $i$, donde tienen un $1$.
+	\end{teorema}
+	\begin{proposicion}
+		Si $v_1,...,v_m\in K^n$, entonces
+		\begin{center}
+			$\gen(v_1,...,v_i,...,v_j,...,v_m)=\gen(v_1,...,v_j,...,v_i,...,v_m)$
+		\end{center} 
+		para todos los $i,j\in\{1,...,m\}$ con $i\neq j$.
+	\end{proposicion}
+	\begin{proposicion}
+		Si $v_1,...,v_m\in K^n$ y $t\in K,t\neq0$, entonces
+		\begin{center}
+			$\gen(v_1,...,v_i,...,v_m)=\gen(v_1,...,tv_i,...,v_m)$
+		\end{center} 
+		para todo $i\in\{1,...,m\}$.
+	\end{proposicion}
+	\begin{proposicion}
+		Si $v_1,...,v_m\in K^n$ y $t\in K$, entonces
+		\begin{center}
+			$\gen(v_1,...,v_i,...,v_j,...,v_m)=\gen(v_1,...,v_i,...,v_j+tv_i,...,v_m)$
+		\end{center} 
+		para todos los $i,j\in\{1,...,m\}$.
+	\end{proposicion}
+	\begin{definicion}
+		Un subespacio de $K^n$ se dice finitamente generado si existe una familia finita de vectores que lo genere.
+	\end{definicion}
 \section{Independencia lineal en $K^n$}
+	\begin{definicion}
+		Una familia $v_1,...,v_m$ de vectores en $K^n$ es linealmente dependiente (o ligada) si existen $t_1,...,t_m\in K$ con algún $t_i\neq0$, tales que
+		\begin{center}
+			$t_1v_1+\cdots+t_mv_m=0$.
+		\end{center}
+		Una familia $v_1,...,v_m$ de vectores en $K^n$ es linealmente independiente (o libre) si no es linealmente dependiente, es decir, si para todos los $t_1,...,t_m\in K$ tales que
+		\begin{center}
+			$t_1v_1+\cdots+t_mv_m=0$
+		\end{center}
+		necesariamente $t_1=\cdots=t_m=0$.
+	\end{definicion}
+	\begin{observacion}
+		\begin{enumerate}
+			\item La familia vacía es libre por vacuidad.
+			\item Toda familia que contiene a una familia ligada es ligada.
+			\item Toda familia contenida en una familia libre es libre.
+			\item En una familia libre no puede estar el vector nulo, ni pueden haber vectores repetidos.
+		\end{enumerate}
+	\end{observacion}
+	\begin{proposicion}
+		La familia $e_1,...,e_n$ de vectores en $K^n$ es libre.
+	\end{proposicion}
+	\begin{proposicion}
+		Una familia $v_1,...,v_m$ de vectores en $K^n$ es linealmente dependiente si y solo si existe $i\in\{1,...,m\}$ tal que $v_i$ es combinación lineal de los anteriores.
+	\end{proposicion}
+	\begin{observacion}
+		Si una familia de vectores genera un espacio y está familia es ligada, entonces hay un vector que es combinación lineal de los anteriores, si lo suprimimos la familia que resulta genera el mismo espacio.
+	\end{observacion}
+	\begin{lema}
+		Una familia $v_1,...,v_m$ de vectores en $K^n$ es linealmente independiente si y solo si todo vector $v\in\gen(v_1,...,v_m)$ se puede escribir de manera única como combinación lineal de $v_1,...,v_m$.
+	\end{lema}
+	\begin{teorema}
+		Toda familia $v_1,...,v_m$ de vectores en $K^n$ con $m>n$ es linealmente dependiente.
+	\end{teorema}
 \section{Bases y dimensión de subespacios de $K^n$}
+	\begin{definicion}
+		Una base de un subespacio $S$ de $K^n$ es una familia de vectores que genera $S$ y es linealmente independiente.
+	\end{definicion}
+
+	\begin{proposicion}
+		Todas la bases de un subespacio finitamente generado de $K^n$ tienen la misma longitud.
+	\end{proposicion}
+	\begin{definicion}
+		Sea $S\leq K^n$ finitamente generado, la longitud de todas las bases de $S$ se llama dimensión de $S$ y se denota por $\dim S$.
+	\end{definicion}
+		\begin{proposicion}
+		Sea $S\leq K^n$, entonces $S$ es finitamente generado y $\dim S\leq n$. Además, $\dim S=n$ si y solo si $S=K^n$.
+	\end{proposicion}
+	\begin{proposicion}
+		Sea $S\leq K^n$ con $\dim S=m$, y sea $\mathcal{F}$ una familia de vectores de $S$ de longitud $m$, entonces $\mathcal{F}$ es libre si y solo si es generadora. En particular, si $\mathcal{F}$ es libre o generadora, entonces es base de $S$.
+	\end{proposicion}
