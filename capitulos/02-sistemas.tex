@@ -2,13 +2,117 @@
 \chapter{Sistemas de ecuaciones lineales y matrices}
 
 \section{Sistemas de ecuaciones lineales}
-
 	\begin{definicion}
-		
+		\begin{itemize}
+			\item Una ecuación lineal de $n$ incógnitas $x_1,...,x_n$ en un cuerpo $K$ es una ecuación que puede escribirse en la forma $a_1x_1+\cdots+a_nx_n=b$ donde los coeficientes $a_1,...,a_n$ y el termino independiente (o constante) $b$ son elementos de $K$.
+			\item Una solución de una ecuación lineal $a_1x_1+\cdots+a_nx_n=b$ es una $n$-tupla $(s_1,...,s_n)$ cuyos componentes satisfacen la ecuación cuando se sustituye $x_1=s_1,...,x_n=s_n$.
+			\item Un sistema de ecuaciones lineales es un conjunto finito de ecuaciones lineales, cada una
+			con las mismas variables. Una solución de un sistema de ecuaciones lineales es un vector que
+			simultáneamente es una solución de cada ecuación en el sistema.
+			\item El conjunto solución de un
+			sistema de ecuaciones lineales es el conjunto de todas las soluciones del sistema. Al proceso
+			de encontrar el conjunto solución de un sistema de ecuaciones lineales se le conocerá
+			como “resolver el sistema”.
+			\item Un sistema de ecuaciones lineales se llama compatible (o consistente) si tiene al menos una solución. Un sistema sin soluciones se llama incompatible (o inconsistente).
+		\end{itemize}
 	\end{definicion}
-
+	\begin{definicion}
+		Las operaciones elementales para un sistema de ecuaciones lineales son:
+		\begin{itemize}
+			\item Multiplicar una ecuación por un escalar no nulo.
+			\item Intercambiar dos ecuaciones.
+			\item Sumar a una ecuación otra multiplicada por un escalar.
+		\end{itemize}
+	\end{definicion}
+	\begin{definicion}
+		Un sistema de ecuaciones lineales se denomina homogéneo si el término constante en cada ecuación es cero.
+	\end{definicion}
 \section{Matrices}
-\section{Forma escalonada reducida de una matriz}
+	\begin{definicion}
+		\begin{itemize}
+			\item Una matriz en un cuerpo $K$ es un arreglo rectangular de elementos de $K$ llamados entradas, o elementos, de la matriz.
+			\item El tamaño de una matriz es una descripción de los números de filas y columnas que tiene. Una matriz se llama $m\times n$ (dígase “$m$ por $n$”) si tiene $m$ filas y $n$ columnas.
+			\item Una matriz de $1\times m$ se llama matriz fila (o vector fila), y una matriz de $n\times 1$ se llama matriz columna (o vector columna).
+			\item La entrada de una matriz $A$ en la fila $i$ y la columna $j$ se denota mediante $a_{ij}$. De manera compacta una matriz $A$ se puede denotar mediante $(a_{ij})$.
+			\item El conjunto de todas las matrices de tamaño $m\times n$ en un cuerpo $K$ se denota como $M_{mn}(K)$.
+		\end{itemize}
+	\end{definicion}
+	\begin{notacion}
+		Una matriz $A=(a_{ij})\in M_{mn}(K)$ tiene la forma
+		\begin{center}
+			$A=\begin{pmatrix}
+				a_{11} & a_{12} & \cdots & a_{1n}\\
+				a_{21} & a_{22} & \cdots & a_{2n}\\
+				\vdots & \vdots & \ddots & \vdots\\
+				a_{m1} & a_{m2} & \cdots & a_{mn}
+			\end{pmatrix}$.
+		\end{center}
+		Si las columnas de $A$ son los vectores $a_1,...,a_n\in K^m$, entonces $A$ se puede representar como $A=\begin{pmatrix}
+			a_1 & a_2 & \cdots & a_n
+		\end{pmatrix}$. Si las filas de $A$ son $A_1,...,A_m\in K^n$, entonces $A$ se puede representar como
+		\begin{center}
+			$A=\begin{pmatrix}
+				A_1\\
+				A_2\\
+				\vdots\\
+				A_m
+			\end{pmatrix}$.
+		\end{center} 
+	\end{notacion}
+	\begin{definicion}
+		\begin{itemize}
+			\item Las entradas diagonales de $A=(a_{ij})$ son $a_{11},a_{22},a_{33},...,$ y si $m=n$ (esto es, si $A$ tiene el mismo número de filas que de columnas), entonces $A$ es una matriz cuadrada. Una matriz
+			cuadrada cuyas entradas no diagonales sean todas cero es una matriz diagonal. Una
+			matriz diagonal cuyas entradas diagonales sean todas iguales es una matriz escalar. Si el
+			escalar en la diagonal es 1, la matriz escalar es una matriz identidad.
+			\item El conjunto de todas las matrices cuadradas de tamaño $n\times n$ (o de orden $n$) en un cuerpo $K$ se denota como $M_{n}(K)$.
+			\item Dos matrices son iguales si tienen el mismo tamaño y si sus entradas correspondientes son iguales.
+		\end{itemize}
+	\end{definicion}
+	\begin{definicion}
+		Para un sistema de $m$ ecuaciones y $n$ incógnitas en un cuerpo $K$
+		\begin{center}
+			$\left\{\begin{array}{c}
+				a_{11}x_1+\cdots+a_{1n}x_n=b_1\\
+				\cdots\\
+				a_{m1}x_1+\cdots+a_{mn}x_n=b_m
+			\end{array}\right.$
+		\end{center}
+		decimos que la matriz 
+		\begin{center}
+			$A=\begin{pmatrix}
+				a_{11} & \cdots & a_{1n}\\
+				\vdots & \ddots & \vdots\\
+				a_{m1} & \cdots & a_{mn}
+			\end{pmatrix}$.
+		\end{center}
+		es la matriz de coeficientes del sistema, y que la matriz 
+		\begin{center}
+			$(A|b)=\left(\begin{array}{ccc|c}
+				a_{11} & \cdots & a_{1n} & b_1\\
+				\vdots & \ddots & \vdots & \vdots\\
+				a_{m1} & \cdots & a_{mn} & b_m
+			\end{array}\right)$
+		\end{center}
+		es la matriz ampliada del sistema.
+	\end{definicion}
+	\begin{definicion}
+		Una matriz está en forma escalonada por filas si satisface las
+		siguientes propiedades:
+		\begin{enumerate}
+			\item Cualquier fila formada enteramente de ceros está en la parte de abajo. 
+			\item En cada fila distinta de cero, la primera entrada no nula (llamado elemento pivote)
+			está en una columna a la izquierda de cualquier elemento pivote debajo de ella.
+		\end{enumerate}
+	\end{definicion}
+	\begin{definicion}
+		Una matriz está en forma escalonada reducida por filas si satisface las siguientes propiedades:
+		\begin{enumerate}
+			\item Está en forma escalonada por filas.
+			\item El elemento pivote en cada fila no nula es 1 (llamado 1 pivote).
+			\item Cada columna que contiene un 1 pivote tiene ceros en todos los otros lugares.
+		\end{enumerate}
+	\end{definicion}
 \section{Subespacios asociados a una matriz}
 \section{Rango de una matriz}
 	\begin{definicion}
@@ -34,6 +138,5 @@
 		Se tiene que $\rango(A^t)=\dim(\Col A^t)=\dim(\Fil A)=\rango(A)$.
 	\end{proof}
 \section{Operaciones con matrices}
-\section{Matrices elementales}
 \section{Matriz inversa}
 \section{Factorización LU}

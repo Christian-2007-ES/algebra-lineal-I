@@ -36,14 +36,14 @@
 			\item $u+v=v+u$.
 			\item $(u+v)+w=u+(v+w)$.
 			\item $u+0=u$.
-			\item $u+(-u)=\bar0$.
+			\item $u+(-u)=0$.
 			\item $t(u+v)=tu+tv$.
 			\item $(t+s)u=tu+ts$.
 			\item $(ts)u=t(su)$.
 			\item $1u=u$.
 		\end{enumerate}
 	\end{proposicion}
-	 Nótese que $(K^n,+)$ es un grupo abeliano con elemento neutro $\bar0=(0,...,0)$. La siguiente proposición muestra algunas propiedades más, ya no tan triviales, de los elementos de $K^n$.
+	 Nótese que $(K^n,+)$ es un grupo abeliano con elemento neutro $0=(0,...,0)$. La siguiente proposición muestra algunas propiedades más, ya no tan triviales, de los elementos de $K^n$.
 	 \begin{proposicion}
 	 	Sean $u,v,w,v_1,...,v_m\in K^n$ y $t,t_1,...,t_m\in K^n$. Entonces:
 	 	\begin{enumerate}
@@ -88,17 +88,14 @@
 		Un vector $v\in K^n$ es combinación lineal de $v_1,...,v_m\in K^n$ si existen $t_1,...,t_m\in K$ tales que $v=t_1v_1+\cdots+t_mv_m$. Los escalares $t_1,...,t_m$ se llaman coeficientes de la combinación lineal.
 	\end{definicion}
 	\begin{definicion}
-		Una familia de vectores de longitud $m$ en $K^n$ es una $m$-tupla $(v_1,...,v_m)$ donde $v_1,...,v_m\in K^n$.
+		Una lista o familia de vectores de longitud $m$ en $K^n$ es una $m$-tupla $(v_1,...,v_m)$ donde $v_1,...,v_m\in K^n$.
 	\end{definicion}
-	\begin{notacion}
-		Escribiremos $v_1,...,v_m$ en lugar de $(v_1,...,v_m)$.
-	\end{notacion}
 	\begin{definicion}
 		Sean $v_1,...,v_m\in K^n$, entonces el conjunto 
 		\begin{center}
 			$\gen(v_1,...,v_m)=\{t_1v_1+\cdots+t_mv_m|t_1,...,t_m\in K\}$
 		\end{center}
-		se llama generador de $v_1,...,v_m$. Si $S=\gen(v_1,...,v_m)$ se dice que la familia $v_1,...,v_m$ genera $S$, o que $v_1,...,v_m$ es una familia generadora de $S$.
+		se llama generador de $v_1,...,v_m$. Si $S=\gen(v_1,...,v_m)$ se dice que la lista $(v_1,...,v_m)$ genera $S$, o que $(v_1,...,v_m)$ es una lista generadora de $S$.
 	\end{definicion}
 	\begin{proposicion}
 		Si $v_1,...,v_m\in K^n$, entonces $\gen(v_1,...,v_m)\leq K^n$. Además, $\gen(v_1,...,v_m)$ es el subespacio más pequeño que contiene a $v_1,...,v_m$, es decir, si $S\leq K^n$ y $v_1,...,v_m\in S$, entonces $\gen(v_1,...,v_m)\subseteq S$.
@@ -106,6 +103,13 @@
 	\begin{lema}
 		Sean $v_1,...,v_m\in K^n$ y $u_1,...,u_k\in K^n$. Si $v_1,...,v_m\in\gen(u_1,...,u_k)$, entonces $\gen(v_1,...,v_m)\subseteq\gen(u_1,...,u_k)$. En particular, $\gen(v_1,...,v_m)=\gen(u_1,...,u_k)$ si y solo si $v_1,...,v_m\in\gen(u_1,...,u_k)$ y $u_1,...,u_k\in\gen(v_1,...,v_m)$.
 	\end{lema}
+	\begin{proof}
+		Como $v_1,...,v_m\in\gen(u_1,...,u_k)$, dado $i\in\{1,...,m\}$ existen $t_{i1},...,t_{ik}\in K$ tales que $v_i=t_{i1}u_1+\cdots+t_{ik}u_k$. Sea $v\in\gen(v_1,...,v_m)$, entonces existen $c_1,...,c_m\in K$ tales que $v=c_1v_1+\cdots+c_mv_m$, luego 
+		\begin{center}
+			$v=\displaystyle\sum_{i=1}^{m}c_iv_i=\sum_{i=1}^{m}c_i(t_{i1}u_1+\cdots+t_{ik}u_k)=\sum_{i=1}^{m}c_i\sum_{j=1}^{k}t_{ij}u_j=\displaystyle\sum_{i=1}^{m}\sum_{j=1}^{k}c_it_{ij}u_j\in\gen(u_1,...,u_k)$.
+		\end{center}
+		Ahora supongamos que $v_1,...,v_m\in\gen(u_1,...,u_k)$ y $u_1,...,u_k\in\gen(v_1,...,v_m)$, por lo que acabamos de ver $\gen(v_1,...,v_m)\subseteq\gen(u_1,...,u_k)$ y $\gen(u_1,...,u_k)\subseteq\gen(v_1,...,v_m)$, luego $\gen(v_1,...,v_m)=\gen(u_1,...,u_k)$. Recíprocamente supongamos que $\gen(v_1,...,v_m)=\gen(u_1,...,u_k)$, dado $i\in\{1,...,m\}$ como $v_i=0v_1+\cdots+v_i+\cdots+0v_m\in\gen(v_1,...,v_m)=\gen(u_1,...,u_k)$ tenemos que $v_i\in\gen(u_1,...,u_k)$, por lo tanto, $v_1,...,v_m\in\gen(u_1,...,u_k)$. Análogamente $u_1,...,u_k\in\gen(v_1,...,v_m)$.
+	\end{proof}
 	\begin{teorema}
 		$K^n=\gen(e_1,...,e_n)$ donde $e_i\in K^n$ es la $n$-tupla que tiene $0$ en todas sus entradas, salvo en la $i$, donde tienen un $1$.
 	\end{teorema}
@@ -135,11 +139,11 @@
 	\end{definicion}
 \section{Independencia lineal en $K^n$}
 	\begin{definicion}
-		Una familia $v_1,...,v_m$ de vectores en $K^n$ es linealmente dependiente (o ligada) si existen $t_1,...,t_m\in K$ con algún $t_i\neq0$, tales que
+		Una lista $(v_1,...,v_m)$ de vectores de $K^n$ es linealmente dependiente (o ligada) si existen $t_1,...,t_m\in K$ con algún $t_i\neq0$, tales que
 		\begin{center}
 			$t_1v_1+\cdots+t_mv_m=0$.
 		\end{center}
-		Una familia $v_1,...,v_m$ de vectores en $K^n$ es linealmente independiente (o libre) si no es linealmente dependiente, es decir, si para todos los $t_1,...,t_m\in K$ tales que
+		Una lista $(v_1,...,v_m)$ de vectores de $K^n$ es linealmente independiente (o libre) si no es linealmente dependiente, es decir, si para todos los $t_1,...,t_m\in K$ tales que
 		\begin{center}
 			$t_1v_1+\cdots+t_mv_m=0$
 		\end{center}
@@ -147,23 +151,23 @@
 	\end{definicion}
 	\begin{observacion}
 		\begin{enumerate}
-			\item La familia vacía es libre por vacuidad.
-			\item Toda familia que contiene a una familia ligada es ligada.
-			\item Toda familia contenida en una familia libre es libre.
-			\item En una familia libre no puede estar el vector nulo, ni pueden haber vectores repetidos.
+			\item La lista vacía es linealmente independiente por vacuidad.
+			\item Toda lista que contiene a otra linealmente dependiente es linealmente dependiente.
+			\item Toda lista contenida en otra linealmente independiente es linealmente independiente.
+			\item En una lista linealmente independiente no puede estar el vector nulo, ni pueden haber vectores repetidos.
 		\end{enumerate}
 	\end{observacion}
 	\begin{proposicion}
-		La familia $e_1,...,e_n$ de vectores en $K^n$ es libre.
+		La lista $(e_1,...,e_n)$ de vectores de $K^n$ es libre.
 	\end{proposicion}
 	\begin{proposicion}
-		Una familia $v_1,...,v_m$ de vectores en $K^n$ es linealmente dependiente si y solo si existe $i\in\{1,...,m\}$ tal que $v_i$ es combinación lineal de los anteriores.
+		Una lista $(v_1,...,v_m)$ de vectores de $K^n$ es linealmente dependiente si y solo si existe $i\in\{1,...,m\}$ tal que $v_i$ es combinación lineal de los anteriores.
 	\end{proposicion}
 	\begin{observacion}
-		Si una familia de vectores genera un espacio y está familia es ligada, entonces hay un vector que es combinación lineal de los anteriores, si lo suprimimos la familia que resulta genera el mismo espacio.
+		Si una lista de vectores genera un espacio y está familia es linealmente dependiente, entonces hay un vector que es combinación lineal de los anteriores, si lo suprimimos la lista que resulta genera el mismo espacio.
 	\end{observacion}
 	\begin{lema}
-		Una familia $v_1,...,v_m$ de vectores en $K^n$ es linealmente independiente si y solo si todo vector $v\in\gen(v_1,...,v_m)$ se puede escribir de manera única como combinación lineal de $v_1,...,v_m$.
+		Una lista $v_1,...,v_m$ de vectores de $K^n$ es linealmente independiente si y solo si todo vector $v\in\gen(v_1,...,v_m)$ se puede escribir de manera única como combinación lineal de $v_1,...,v_m$.
 	\end{lema}
 	\begin{teorema}
 		Toda familia $v_1,...,v_m$ de vectores en $K^n$ con $m>n$ es linealmente dependiente.
